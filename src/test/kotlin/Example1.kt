@@ -1,4 +1,3 @@
-
 import akka.actor.AbstractLoggingActor
 import akka.actor.ActorRef.noSender
 import akka.actor.ActorSystem.create
@@ -15,7 +14,10 @@ fun main(args: Array<String>) {
     }
 
     val actorSystem = create("example1")
-    val actorRef = actorSystem.actorOf(create(HelloActor::class.java),"hello1")
+    val actorRef = actorSystem.actorOf(
+        create(HelloActor::class.java),
+        "hello1"
+    )
     actorSystem.log().info("Sending 'Tom'")
     actorRef.tell("Tom", noSender())
     Thread.sleep(1000)

@@ -1,7 +1,9 @@
 ---
-layout: post
+layout: default
 title: Kotkin + Akka: Hello Kotlin!
 ---
+# Hello Kotlin!
+
 Let’s create our first ‘Hello Kotlin’ actor:
 ```kotlin
 import akka.actor.AbstractLoggingActor
@@ -20,7 +22,10 @@ fun main(args: Array<String>) {
     }
 
     val actorSystem = create("example1")
-    val actorRef = actorSystem.actorOf(create(HelloActor::class.java),"hello1")
+    val actorRef = actorSystem.actorOf(
+        create(HelloActor::class.java),
+        "hello1"
+    )
     actorSystem.log().info("Sending 'Tom'")
     actorRef.tell("Tom", noSender())
     Thread.sleep(1000)
@@ -28,8 +33,8 @@ fun main(args: Array<String>) {
 }
 ```
 What's going on?
-1. `HelloActor` class receiver is configured to handle any message of type `String` and log a hello message.
-`HelloActor` base class mixes logging into the actor.
+1. `HelloActor` is an actor class whose base class mixes logging into the actor class.
+1. `HelloActor::createReceive` method is configured to create a receiver able to handle any message of type `String` and then log a hello message.
 1. `ActorSystem.create` creates the actor system. 
 It is a heavyweight structure that will allocate *Threads*, so we should create one per logical application. 
 1. `Props.create(...)` creates a *Props*, an immutable configuration object using in creating an actor given a class.
@@ -42,8 +47,8 @@ As there is no sender, we pass `noSender()` as sender reference.
 
 Running the above code will startup the actor system and print out the following output:
 ```
-[INFO] [11/10/2018 13:55:16.611] [main] [akka.actor.ActorSystemImpl(example1)] Sending 'Tom'
-[INFO] [11/10/2018 13:55:16.614] [example1-akka.actor.default-dispatcher-2] [akka://example1/user/hello1] Hello Tom!
+[INFO] [...] [main] [akka.actor.ActorSystemImpl(example1)] Sending 'Tom'
+[INFO] [...] [example1-akka.actor.default-dispatcher-2] [akka://example1/user/hello1] Hello Tom!
 ```
 Note that:
 1. The log messages are form separate threads.
