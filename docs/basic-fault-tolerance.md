@@ -87,4 +87,4 @@ There are a few callbacks that are called here:
 - `preRestart()` by default it disposes of all children and then calls `postStop()`.
 - `postRestart()` by default it calls `preStart()`.
 
-The source code is available [here](../src/main/kotlin/Example2.kt).
+The source code is available [here](https://github.com/fjlopez/kotlin-akka/blob/master/src/main/kotlin/Example2.kt).

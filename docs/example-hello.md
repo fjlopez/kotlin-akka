@@ -55,4 +55,4 @@ Note that:
 One of the threads are an Akka dispatcher.
 1. The actor has an unique address based on the name of the actor system (`example1`) and the actor name (`hello1`).
 
-The source code is available [here](../src/main/kotlin/Example1.kt).
+The source code is available [here](https://github.com/fjlopez/kotlin-akka/blob/master/src/main/kotlin/Example1.kt).
