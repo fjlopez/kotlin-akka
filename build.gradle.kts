@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     compile(kotlin("stdlib-jdk8"))
-    compile("com.typesafe.akka:akka-actor_2.11:2.5.11")
+    compile("com.typesafe.akka:akka-actor_2.12:2.5.18")
 }
 
 tasks.withType<KotlinCompile> {

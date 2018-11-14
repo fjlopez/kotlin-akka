@@ -8,7 +8,7 @@ import akka.japi.pf.ReceiveBuilder
 import java.lang.Thread.sleep
 import java.util.*
 
-fun main(args: Array<String>) {
+fun main() {
 
     class DieException(message: String) : Exception(message)
 

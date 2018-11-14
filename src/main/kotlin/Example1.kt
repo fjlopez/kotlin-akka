@@ -4,7 +4,7 @@ import akka.actor.ActorSystem.create
 import akka.actor.Props.create
 import akka.japi.pf.ReceiveBuilder
 
-fun main(args: Array<String>) {
+fun main() {
 
     class HelloActor : AbstractLoggingActor() {
         override fun createReceive() = ReceiveBuilder()

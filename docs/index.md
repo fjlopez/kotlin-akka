@@ -12,3 +12,4 @@ applications based on the [Actor model](https://en.wikipedia.org/wiki/Actor_mode
 
 * [Hello Kotlin!](example-hello.md)
 * [Basic fault Tolerance](basic-fault-tolerance.md)
+* [Dispatchers](intro-dispatchers.md)
