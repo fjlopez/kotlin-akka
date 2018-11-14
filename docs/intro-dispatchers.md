@@ -2,18 +2,18 @@
 layout: default
 title: Kotkin + Akka: Dispatchers
 ---
-# Dispatcher
+# Dispatchers
 
 The dispatcher defines the wiring of an actor within an actor system. 
 
-The **default dispatcher** creates one mailbox per actor and is backed by a thread pool that can be shared across multiple actors.
-It is recommended for non-blocking actors that perform short lived tasks. 
+The **default dispatcher** creates *one mailbox per actor* and is backed by a thread pool that can be shared across multiple actors.
+It is recommended for *non-blocking short lived actors*. 
 
-The **pinned dispatcher** creates one mailbox per actor backed by a single theraded pool that cannot be shared across actors .
-It is recommended for long running, blocking actors.
+The **pinned dispatcher** creates *one mailbox per actor* backed by a single threaded pool that cannot be shared across actors .
+It is recommended for *long running, blocking actors*.
 
-The **calling thread dispatcher** creates one mailbox per actor per thread, i.e. the thread that sends a message to an actor is also used to deliver and process the message.
-It creates a deterministic behaviour useful for testing.
+The **calling thread dispatcher** creates *one mailbox per actor per thread*, i.e. the thread that sends a message to an actor is also used to deliver and process the message.
+It creates a *deterministic behaviour* useful for *testing*.
 
 The dispatcher behaviour can be defined programmatically or we can use a deployment configuration.
 ```
