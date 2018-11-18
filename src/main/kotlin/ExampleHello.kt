@@ -13,7 +13,7 @@ fun main() {
             }.build()
     }
 
-    val actorSystem = create("example1")
+    val actorSystem = create("example-hello")
     val actorRef = actorSystem.actorOf(
         create(HelloActor::class.java),
         "hello1"

@@ -57,7 +57,7 @@ fun main() {
                 .build()
     }
 
-    val actorSystem = create("example2")
+    val actorSystem = create("basic-fault-tolerance")
     val actorRef = actorSystem.actorOf(create(ParentActor::class.java), "parent")
     sleep(500)
     actorSystem.log().info("Sending 'Tom'")

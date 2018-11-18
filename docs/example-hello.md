@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
             }.build()
     }
 
-    val actorSystem = create("example1")
+    val actorSystem = create("example-hello")
     val actorRef = actorSystem.actorOf(
         create(HelloActor::class.java),
         "hello1"
@@ -47,12 +47,12 @@ As there is no sender, we pass `noSender()` as sender reference.
 
 Running the above code will startup the actor system and print out the following output:
 ```
-[INFO] [...] [main] [akka.actor.ActorSystemImpl(example1)] Sending 'Tom'
-[INFO] [...] [example1-akka.actor.default-dispatcher-2] [akka://example1/user/hello1] Hello Tom!
+[INFO] [...] [main] [akka.actor.ActorSystemImpl(example-hello)] Sending 'Tom'
+[INFO] [...] [example-hello-akka.actor.default-dispatcher-2] [akka://example-hello/user/hello1] Hello Tom!
 ```
 Note that:
 1. The log messages are form separate threads.
 One of the threads are an Akka dispatcher.
-1. The actor has an unique address based on the name of the actor system (`example1`) and the actor name (`hello1`).
+1. The actor has an unique address based on the name of the actor system (`example-hello`) and the actor name (`hello1`).
 
-The source code is available [here](https://github.com/fjlopez/kotlin-akka/blob/master/src/main/kotlin/Example1.kt).
+The source code is available [here](https://github.com/fjlopez/kotlin-akka/blob/master/src/main/kotlin/ExampleHello.kt).

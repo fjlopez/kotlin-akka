@@ -39,7 +39,7 @@ fun main() {
             }.build()
     }
 
-    val actorSystem = create("example3", parseResources("example3.conf"))
+    val actorSystem = create("intro-dispatchers", parseResources("intro-dispatchers.conf"))
     val actorRef1 = actorSystem.actorOf(Props.create(HelloActor::class.java), "actor1")
     val actorRef2 =
         actorSystem.actorOf(
@@ -54,9 +54,9 @@ fun main() {
 ```
 Running the above code will startup the actor system and print out the following output:
 ```
-[INFO] [...] [main] [akka.actor.ActorSystemImpl(example3)] Sending 'Tom' and 'Mary'
-[INFO] [...] [example3-akka.actor.default-dispatcher-2] [akka://example3/user/actor1] Hello Tom!
-[INFO] [...] [example3-actor2-dispatcher-5] [akka://example3/user/actor2] Hello Mary!
+[INFO] [...] [main] [akka.actor.ActorSystemImpl(intro-dispatchers)] Sending 'Tom' and 'Mary'
+[INFO] [...] [intro-dispatchers-akka.actor.default-dispatcher-2] [akka://intro-dispatchers/user/actor1] Hello Tom!
+[INFO] [...] [intro-dispatchers-actor2-dispatcher-5] [akka://intro-dispatchers/user/actor2] Hello Mary!
 ```
 
-The source code is available [here](https://github.com/fjlopez/kotlin-akka/blob/master/src/main/kotlin/Example3.kt).
+The source code is available [here](https://github.com/fjlopez/kotlin-akka/blob/master/src/main/kotlin/IntroDispatchers.kt).

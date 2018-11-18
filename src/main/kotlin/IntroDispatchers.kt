@@ -13,7 +13,7 @@ fun main() {
             }.build()
     }
 
-    val actorSystem = create("example3", parseResources("example3.conf"))
+    val actorSystem = create("intro-dispatchers", parseResources("intro-dispatchers.conf"))
     val actorRef1 = actorSystem.actorOf(Props.create(HelloActor::class.java), "actor1")
     val actorRef2 =
         actorSystem.actorOf(

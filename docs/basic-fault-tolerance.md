@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Kotkin + Akka: Basic tault tolerance
+title: Kotkin + Akka: Basic fault tolerance
 ---
 # Basic fault tolerance
 An important concept to understand is that Actors are hierarchical, 
@@ -61,7 +61,7 @@ class ParentActor : AbstractLoggingActor() {
 ```
 We now create our actor system and send a normal message and a kill message so we can test the :
 ```kotlin
-val actorSystem = create("example2")
+val actorSystem = create("basic-fault-tolerance")
 val actorRef = actorSystem.actorOf(create(ParentActor::class.java), "parent")
 sleep(500)
 actorSystem.log().info("Sending 'Tom'")
@@ -87,4 +87,4 @@ There are a few callbacks that are called here:
 - `preRestart()` by default it disposes of all children and then calls `postStop()`.
 - `postRestart()` by default it calls `preStart()`.
 
-The source code is available [here](https://github.com/fjlopez/kotlin-akka/blob/master/src/main/kotlin/Example2.kt).
+The source code is available [here](https://github.com/fjlopez/kotlin-akka/blob/master/src/main/kotlin/BasicFaultTolerance.kt).
