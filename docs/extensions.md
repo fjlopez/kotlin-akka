@@ -12,9 +12,9 @@ Akka allows for scheduling a one-off task or a repeating task using `context.sys
 
 [Stephen Hopper](https://github.com/enragedginger)'s [Quartz Extension](https://github.com/enragedginger/akka-quartz-scheduler) 
 is a popular extension that provides scheduling in Akka 2.5.x. based on [Quartz Scheduler 2.3.x](https://github.com/quartz-scheduler/quartz).
-
 The Akka Scheduler is designed to setup [once off](https://fjlopez.github.io/kotlin-akka/intro-scheduling.html#once-off-task) 
 or [repeating](https://fjlopez.github.io/kotlin-akka/intro-scheduling.html#repeating-task) events that happen based on durations from the current moment.
+This extension uses quartz jobs to schedule messages in Akka.
 
 The usage of this component first requires including the dependency into the project.
 Then, it is necessary to create and access to the extension:
