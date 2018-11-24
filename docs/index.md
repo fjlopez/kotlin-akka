@@ -10,8 +10,11 @@ applications based on the [Actor model](https://en.wikipedia.org/wiki/Actor_mode
 
 # Contents
 
+## Actors
 * [Hello Kotlin!](example-hello.md)
 * [Basic fault Tolerance](basic-fault-tolerance.md)
 * [Dispatchers](intro-dispatchers.md)
+## Utilities
+* [Event Stream](event-stream.md)
 * [Scheduling](intro-scheduling.md)
 * [Extensions](extensions.md)
